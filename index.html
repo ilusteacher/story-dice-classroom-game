@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Story Dice – Interactive Classroom Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Nunito:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Classroom Creativity</p>
+          <h1>Story Dice</h1>
+        </div>
+        <button id="resetGame" class="secondary-btn">Reset</button>
+      </header>
+
+      <main class="game-layout">
+        <section class="panel controls-panel">
+          <div class="group">
+            <label for="className">Class or Team Name</label>
+            <input id="className" type="text" value="Room 4C" maxlength="30" />
+          </div>
+
+          <div class="group inline-tools">
+            <button id="randomTeamName" class="ghost-btn">Random Team Name</button>
+            <button id="rollDice" class="primary-btn">Roll Story Dice</button>
+          </div>
+
+          <div class="score-strip">
+            <div class="score-box">
+              <span class="label">Round</span>
+              <strong id="roundCount">1</strong>
+            </div>
+            <div class="score-box">
+              <span class="label">Story Points</span>
+              <strong id="storyPoints">0</strong>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel board-panel">
+          <div class="dice-grid" id="diceGrid">
+            <article class="die-card" data-category="Character">
+              <span class="die-label">Character</span>
+              <div class="die-face" id="diceCharacter">?</div>
+            </article>
+
+            <article class="die-card" data-category="Setting">
+              <span class="die-label">Setting</span>
+              <div class="die-face" id="diceSetting">?</div>
+            </article>
+
+            <article class="die-card" data-category="Object">
+              <span class="die-label">Object</span>
+              <div class="die-face" id="diceObject">?</div>
+            </article>
+
+            <article class="die-card" data-category="Problem">
+              <span class="die-label">Problem</span>
+              <div class="die-face" id="diceProblem">?</div>
+            </article>
+
+            <article class="die-card" data-category="Action">
+              <span class="die-label">Action</span>
+              <div class="die-face" id="diceAction">?</div>
+            </article>
+
+            <article class="die-card" data-category="Twist">
+              <span class="die-label">Twist</span>
+              <div class="die-face" id="diceTwist">?</div>
+            </article>
+          </div>
+
+          <div class="story-sentence-wrap">
+            <h2>Story Starter</h2>
+            <p id="storyStarter">Press “Roll Story Dice” to create a wild story challenge.</p>
+          </div>
+        </section>
+      </main>
+
+      <section class="panel story-panel">
+        <div class="story-header">
+          <h2>Write the Story</h2>
+          <button id="addSentence" class="primary-btn small">Add to Story</button>
+        </div>
+
+        <textarea
+          id="storyTextarea"
+          rows="6"
+          placeholder="Type your story sentence here..."
+        ></textarea>
+
+        <div class="story-feed" id="storyFeed">
+          <p class="empty-message">No sentences yet. Start the adventure!</p>
+        </div>
+      </section>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
